@@ -1,6 +1,9 @@
 package com.example.workout_generator;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,12 +13,13 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class WorkoutActivity extends AppCompatActivity {
+
     String[] quadExercises = {"step ups", "lunges", "kettlebell swing", "leg press machine", "figure 8 squats", "bear squat", "curtsy lunge side kick"};
     String[] gluteExercises = {"side lunge curtsy lunge", "hip raises", "chest fly glute bridge", "step ups", "basketball shots", "knee to elbow kickback", "plie squat calf raise", "romanian deadlift", "rolling squat"};
     String[] pushExercises = {"overhead press", "bench press", "incline dumbell press", "push ups", "dips", "asymmetrical push ups", "standing chest fly", "curtsy lunge side rainbow"};
     String[] pullExercises = {"tabletop reverse pike", "knee and elbow push up", "bodyweight rows", "dumbell rows", "bear walk", "bow and arrow squat pull", "up down plank", "reverse plank"};
     String[] coreExercises = {"plank", "side plank", "exercise ball crunches", "mountain climbers", "russian twist", "crunch chop", "wood chop", "dumbell leg scoop", "double leg stretch"};
-    int quad, glute, push, pull, core;
+//    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
     @Override
     protected void onCreate(Bundle savedInstantState) {
@@ -32,6 +36,9 @@ public class WorkoutActivity extends AppCompatActivity {
                 generateRandNums();
             }
         });
+
+
+
 
         //Choose button functionality
         Button choose = findViewById(R.id.choose_button);
@@ -61,28 +68,24 @@ public class WorkoutActivity extends AppCompatActivity {
 
     public void quads(int x) {
         TextView exerciseText = findViewById(R.id.quads_text);
-        String exercise = "Quads\n";
-        quad = x;
+        String exercise = "Quads";
+//        SharedPreferences.Editor editor = preferences.edit();
+//        editor.putInt(exercise,x);
+//        editor.apply();
 
-        for (int i = 0; i < quadExercises.length; i++) {
-            if (x == i) {
-                exercise += quadExercises[i];
-            }
-        }
+        exercise += "\n" + quadExercises[x];
 
         exerciseText.setText(exercise);
     }
 
     public void glutes(int x) {
         TextView exerciseText = findViewById(R.id.glutes_text);
-        String exercise = "Glutes\n";
-        glute = x;
+        String exercise = "Glutes";
+//        SharedPreferences.Editor editor = preferences.edit();
+//        editor.putInt(exercise,x);
+//        editor.apply();
 
-        for (int i = 0; i < gluteExercises.length; i++) {
-            if (x == i) {
-                exercise += gluteExercises[i];
-            }
-        }
+        exercise += "\n" + gluteExercises[x];
 
         exerciseText.setText(exercise);
     }
@@ -90,42 +93,35 @@ public class WorkoutActivity extends AppCompatActivity {
 
     public void push(int x) {
         TextView exerciseText = findViewById(R.id.push_text);
-        String exercise = "Push\n";
-        push = x;
-
-        for (int i = 0; i < pushExercises.length; i++) {
-            if (x == i) {
-                exercise += pushExercises[i];
-            }
-        }
+        String exercise = "Push";
+//        SharedPreferences.Editor editor = preferences.edit();
+//        editor.putInt(exercise,x);
+//        editor.apply();
+        exercise += "\n" + pushExercises[x];
 
         exerciseText.setText(exercise);
     }
 
     public void pull(int x) {
         TextView exerciseText = findViewById(R.id.pull_text);
-        String exercise = "Pull\n";
-        pull = x;
+        String exercise = "Pull";
+//        SharedPreferences.Editor editor = preferences.edit();
+//        editor.putInt(exercise,x);
+//        editor.apply();
 
-        for (int i = 0; i < pullExercises.length; i++) {
-            if (x == i) {
-                exercise += pullExercises[i];
-            }
-        }
+        exercise += "\n" + pullExercises[x];
 
         exerciseText.setText(exercise);
     }
 
     public void core(int x) {
         TextView exerciseText = findViewById(R.id.core_text);
-        String exercise = "Core\n";
-        core = x;
+        String exercise = "Core";
+//        SharedPreferences.Editor editor = preferences.edit();
+//        editor.putInt(exercise,x);
+//        editor.apply();
 
-        for (int i = 0; i < coreExercises.length; i++) {
-            if (x == i) {
-                exercise += coreExercises[i];
-            }
-        }
+        exercise += "\n" + coreExercises[x];
 
         exerciseText.setText(exercise);
     }

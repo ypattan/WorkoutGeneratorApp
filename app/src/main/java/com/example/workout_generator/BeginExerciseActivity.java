@@ -9,5 +9,7 @@ public class BeginExerciseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstantState) {
         super.onCreate(savedInstantState);
         setContentView(R.layout.activity_begin_exercise);
+
+
     }
 }
