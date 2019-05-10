@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+//SharedPreference usage documentation
+//https://stackoverflow.com/questions/3624280/how-to-use-sharedpreferences-in-android-to-store-fetch-and-edit-values
 public class WorkoutActivity extends AppCompatActivity {
 
     String[] quadExercises = {"step ups", "lunges", "kettlebell swing", "leg press machine", "figure 8 squats", "bear squat", "curtsy lunge side kick"};
@@ -19,7 +21,6 @@ public class WorkoutActivity extends AppCompatActivity {
     String[] pushExercises = {"overhead press", "bench press", "incline dumbell press", "push ups", "dips", "asymmetrical push ups", "standing chest fly", "curtsy lunge side rainbow"};
     String[] pullExercises = {"tabletop reverse pike", "knee and elbow push up", "bodyweight rows", "dumbell rows", "bear walk", "bow and arrow squat pull", "up down plank", "reverse plank"};
     String[] coreExercises = {"plank", "side plank", "exercise ball crunches", "mountain climbers", "russian twist", "crunch chop", "wood chop", "dumbell leg scoop", "double leg stretch"};
-//    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
     @Override
     protected void onCreate(Bundle savedInstantState) {
@@ -69,9 +70,9 @@ public class WorkoutActivity extends AppCompatActivity {
     public void quads(int x) {
         TextView exerciseText = findViewById(R.id.quads_text);
         String exercise = "Quads";
-//        SharedPreferences.Editor editor = preferences.edit();
-//        editor.putInt(exercise,x);
-//        editor.apply();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(exercise,quadExercises[x]).apply();
 
         exercise += "\n" + quadExercises[x];
 
@@ -81,9 +82,9 @@ public class WorkoutActivity extends AppCompatActivity {
     public void glutes(int x) {
         TextView exerciseText = findViewById(R.id.glutes_text);
         String exercise = "Glutes";
-//        SharedPreferences.Editor editor = preferences.edit();
-//        editor.putInt(exercise,x);
-//        editor.apply();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt(exercise,x).apply();
 
         exercise += "\n" + gluteExercises[x];
 
