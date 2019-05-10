@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#FFE9E4"
+        >
+        <RelativeLayout
+            android:id="@+id/textRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFE9E4"
+            >
+
+            <TextView
+                android:id="@+id/quads_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quads"
+                android:textSize="15sp"
+                android:textColor="#444444"
+                android:background="#FFB067"
+                android:textAlignment="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"/>
+
+            <TextView
+                android:id="@+id/glutes_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Glutes"
+                android:textSize="15sp"
+                android:textColor="#444444"
+                android:background="#FFB067"
+                android:textAlignment="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/quads_text"/>
+
+            <TextView
+                android:id="@+id/push_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Push"
+                android:textSize="15sp"
+                android:textColor="#444444"
+                android:background="#FFB067"
+                android:textAlignment="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/glutes_text"/>
+
+            <TextView
+                android:id="@+id/pull_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pull"
+                android:textSize="15sp"
+                android:textColor="#444444"
+                android:background="#FFB067"
+                android:textAlignment="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/push_text"/>
+
+            <TextView
+                android:id="@+id/core_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Core"
+                android:textSize="15sp"
+                android:textColor="#444444"
+                android:background="#FFB067"
+                android:textAlignment="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/pull_text"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/buttonRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFE9E4"
+            android:layout_below="@id/textRelativeLayout"
+            >
+
+            <Button
+                android:id="@+id/refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_margin="20dp"
+                android:padding="20dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:text="Try again"
+                android:textColor="#444444"
+                android:background="#ACEEF3"
+                />
+
+            <Button
+                android:id="@+id/choose_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_margin="20dp"
+                android:layout_alignParentRight="true"
+                android:padding="20dp"
+                android:text="Choose"
+                android:textColor="#444444"
+                android:background="#ACEEF3"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

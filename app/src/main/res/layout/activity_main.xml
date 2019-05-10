@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#ffe9e4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation= "vertical">
+
+        <Button
+            android:id="@+id/generate_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Generate Workout"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:textColor="#444444"
+            android:background="#ACEEF3"/>
+
+        <Button
+            android:id="@+id/ankleEx_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ankle Exercises"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:textColor="#444444"
+            android:background="#ACEEF3"/>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
