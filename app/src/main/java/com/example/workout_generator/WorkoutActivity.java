@@ -16,7 +16,7 @@ import java.util.Random;
 //https://stackoverflow.com/questions/3624280/how-to-use-sharedpreferences-in-android-to-store-fetch-and-edit-values
 public class WorkoutActivity extends AppCompatActivity {
 
-    String[] quadExercises = {"step ups", "lunges", "kettlebell swing", "leg press machine", "figure 8 squats", "bear squat", "curtsy lunge side kick"};
+    String[] quadExercises = {"step ups", "lunges", "kettlebell swing", "figure 8 squats", "bear squat", "curtsy lunge side kick"};
     String[] gluteExercises = {"side lunge curtsy lunge", "hip raises", "chest fly glute bridge", "step ups", "basketball shots", "knee to elbow kickback", "plie squat calf raise", "romanian deadlift", "rolling squat"};
     String[] pushExercises = {"overhead press", "bench press", "incline dumbell press", "push ups", "dips", "asymmetrical push ups", "standing chest fly", "curtsy lunge side rainbow"};
     String[] pullExercises = {"tabletop reverse pike", "knee and elbow push up", "bodyweight rows", "dumbell rows", "bear walk", "bow and arrow squat pull", "up down plank", "reverse plank"};
@@ -37,8 +37,6 @@ public class WorkoutActivity extends AppCompatActivity {
                 generateRandNums();
             }
         });
-
-
 
 
         //Choose button functionality
