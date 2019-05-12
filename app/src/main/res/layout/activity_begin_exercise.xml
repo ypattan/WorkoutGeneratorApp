@@ -61,6 +61,8 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/start_pause_button"
             android:text="reset"
+            android:visibility="invisible"
+            tools:visibility="visible"
             android:textColor="#444444"
             android:background="#ACEEF3"/>
 
@@ -75,7 +77,8 @@
             android:layout_below="@+id/reset_button"
             android:text="Next Exercise"
             android:textColor="#444444"
-            android:background="#ACEEF3"/>
+            android:background="#ACEEF3"
+            android:onClick="currExerciseOutput"/>
 
 
 

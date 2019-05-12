@@ -93,9 +93,10 @@ public class WorkoutActivity extends AppCompatActivity {
     public void push(int x) {
         TextView exerciseText = findViewById(R.id.push_text);
         String exercise = "Push";
-//        SharedPreferences.Editor editor = preferences.edit();
-//        editor.putInt(exercise,x);
-//        editor.apply();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt(exercise,x).apply();
+
         exercise += "\n" + pushExercises[x];
 
         exerciseText.setText(exercise);
@@ -104,9 +105,9 @@ public class WorkoutActivity extends AppCompatActivity {
     public void pull(int x) {
         TextView exerciseText = findViewById(R.id.pull_text);
         String exercise = "Pull";
-//        SharedPreferences.Editor editor = preferences.edit();
-//        editor.putInt(exercise,x);
-//        editor.apply();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt(exercise,x).apply();
 
         exercise += "\n" + pullExercises[x];
 
@@ -116,9 +117,9 @@ public class WorkoutActivity extends AppCompatActivity {
     public void core(int x) {
         TextView exerciseText = findViewById(R.id.core_text);
         String exercise = "Core";
-//        SharedPreferences.Editor editor = preferences.edit();
-//        editor.putInt(exercise,x);
-//        editor.apply();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt(exercise,x).apply();
 
         exercise += "\n" + coreExercises[x];
 
