@@ -68,7 +68,7 @@ public class WorkoutActivity extends AppCompatActivity {
     public void saveData (String exercise, String exercises[], int x) {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(exercise,exercises[x]).apply();
+        editor.putString(exercise, exercises[x]).apply();
     }
 
     public void quads(int x) {
