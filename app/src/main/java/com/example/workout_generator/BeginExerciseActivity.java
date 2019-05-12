@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
+import static android.provider.Telephony.Mms.Part.TEXT;
+import static com.example.workout_generator.WorkoutActivity.SHARED_PREFS;
+
 // Timer Implementation
 // https://www.youtube.com/playlist?list=PLrnPJCHvNZuB8wxqXCwKw2_NkyEmFwcSd
 // https://codinginflow.com/tutorials/android/countdowntimer/part-1-countdown-timer
@@ -43,13 +46,13 @@ public class BeginExerciseActivity extends AppCompatActivity {
 
         countDownTextView = findViewById(R.id.text_view_countdown);
 
-//        nextButton = findViewById(R.id.next_exercise);
-//        nextButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                currExerciseOutput();
-//            }
-//        });
+        nextButton = findViewById(R.id.next_exercise);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nextOption();
+            }
+        });
 
 
         startpauseButton = findViewById(R.id.start_pause_button);
@@ -118,24 +121,45 @@ public class BeginExerciseActivity extends AppCompatActivity {
         countDownTextView.setText(timeLeftFormatted);
     }
 
-    private void currExerciseOutput () {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+//    private void currExerciseOutput () {
+//        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        TextView exerciseText = findViewById(R.id.exercise_text);
+//        if (exerciseNum == 0) {
+//            exerciseText.setText("Quads\n" + preferences.getString("Quads", ""));
+//        } else if (exerciseNum == 1) {
+//            exerciseText.setText("Glutes\n" + preferences.getString("Glutes", ""));
+//        } else if (exerciseNum == 2) {
+//            exerciseText.setText("Push\n" + preferences.getString("Push", ""));
+//        } else if (exerciseNum == 3) {
+//            exerciseText.setText("Pull\n" + preferences.getString("Pull", ""));
+//        } else if (exerciseNum == 4) {
+//            exerciseText.setText("Core\n" + preferences.getString("Core", ""));
+//        } else {
+//            doneWithWorkout();
+//        }
+//
+//        exerciseNum++;
+//    }
+
+    public void nextOption() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         TextView exerciseText = findViewById(R.id.exercise_text);
         if (exerciseNum == 0) {
-            exerciseText.setText("Quads\n" + preferences.getString("Quads", ""));
-        } else if (exerciseNum == 1) {
-            exerciseText.setText("Glutes\n" + preferences.getString("Glutes", ""));
-        } else if (exerciseNum == 2) {
-            exerciseText.setText("Push\n" + preferences.getString("Push", ""));
-        } else if (exerciseNum == 3) {
-            exerciseText.setText("Pull\n" + preferences.getString("Pull", ""));
-        } else if (exerciseNum == 4) {
-            exerciseText.setText("Core\n" + preferences.getString("Core", ""));
-        } else {
-            doneWithWorkout();
+            String text = sharedPreferences.getString("Glutes", "");
+            exerciseText.setText("Glutes\n" + text);
+        } else if (exerciseNum == 1){
+            String text = sharedPreferences.getString("Push", "");
+            exerciseText.setText("Push\n" + text);
+        } else if (exerciseNum == 2){
+            String text = sharedPreferences.getString("Pull", "");
+            exerciseText.setText("Pull\n" + text);
+        } else if (exerciseNum == 3){
+            String text = sharedPreferences.getString("Core", "");
+            exerciseText.setText("Core\n" + text);
         }
 
         exerciseNum++;
+
     }
 
     private void currExerciseOutput (View view) {

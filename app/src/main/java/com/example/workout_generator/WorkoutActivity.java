@@ -16,6 +16,8 @@ import java.util.Random;
 //https://stackoverflow.com/questions/3624280/how-to-use-sharedpreferences-in-android-to-store-fetch-and-edit-values
 public class WorkoutActivity extends AppCompatActivity {
 
+    public static final String SHARED_PREFS = "sharedPrefs";
+
     String[] quadExercises = {"step ups", "lunges", "kettlebell swing", "figure 8 squats", "bear squat", "curtsy lunge side kick"};
     String[] gluteExercises = {"side lunge curtsy lunge", "hip raises", "chest fly glute bridge", "step ups", "basketball shots", "knee to elbow kickback", "plie squat calf raise", "romanian deadlift", "rolling squat"};
     String[] pushExercises = {"overhead press", "bench press", "incline dumbell press", "push ups", "dips", "asymmetrical push ups", "standing chest fly", "curtsy lunge side rainbow"};
@@ -63,14 +65,16 @@ public class WorkoutActivity extends AppCompatActivity {
         core(rand.nextInt(coreExercises.length));
     }
 
-
+    public void saveData (String exercise, String exercises[], int x) {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(exercise,exercises[x]).apply();
+    }
 
     public void quads(int x) {
         TextView exerciseText = findViewById(R.id.quads_text);
         String exercise = "Quads";
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString(exercise,quadExercises[x]).apply();
+        saveData(exercise, quadExercises, x);
 
         exercise += "\n" + quadExercises[x];
 
@@ -80,9 +84,7 @@ public class WorkoutActivity extends AppCompatActivity {
     public void glutes(int x) {
         TextView exerciseText = findViewById(R.id.glutes_text);
         String exercise = "Glutes";
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putInt(exercise,x).apply();
+        saveData(exercise, gluteExercises, x);
 
         exercise += "\n" + gluteExercises[x];
 
@@ -93,9 +95,7 @@ public class WorkoutActivity extends AppCompatActivity {
     public void push(int x) {
         TextView exerciseText = findViewById(R.id.push_text);
         String exercise = "Push";
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putInt(exercise,x).apply();
+        saveData(exercise, pushExercises, x);
 
         exercise += "\n" + pushExercises[x];
 
@@ -105,9 +105,7 @@ public class WorkoutActivity extends AppCompatActivity {
     public void pull(int x) {
         TextView exerciseText = findViewById(R.id.pull_text);
         String exercise = "Pull";
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putInt(exercise,x).apply();
+        saveData(exercise, pullExercises, x);
 
         exercise += "\n" + pullExercises[x];
 
@@ -117,9 +115,7 @@ public class WorkoutActivity extends AppCompatActivity {
     public void core(int x) {
         TextView exerciseText = findViewById(R.id.core_text);
         String exercise = "Core";
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putInt(exercise,x).apply();
+        saveData(exercise, coreExercises, x);
 
         exercise += "\n" + coreExercises[x];
 

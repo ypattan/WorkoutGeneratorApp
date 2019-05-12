@@ -77,10 +77,7 @@
             android:layout_below="@+id/reset_button"
             android:text="Next Exercise"
             android:textColor="#444444"
-            android:background="#ACEEF3"
-            android:onClick="currExerciseOutput"/>
-
-
+            android:background="#ACEEF3"/>
 
     </RelativeLayout>
 
